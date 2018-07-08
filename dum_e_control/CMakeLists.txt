@@ -155,19 +155,11 @@ include_directories(
 #   src/${PROJECT_NAME}/dum_e_control.cpp
 # )
 
-add_library(dum_e_hardware_interface
-  src/dum_e_hardware_interface.cpp
-)
-target_link_libraries(dum_e_hardware_interface
-  ${catkin_LIBRARIES}
-)
+add_library(dum_e_hardware_interface src/dum_e_hardware_interface.cpp)
+target_link_libraries(dum_e_hardware_interface ${catkin_LIBRARIES})
 
-add_library(dum_e_control_loop
-  src/dum_e_control_loop.cpp
-)
-target_link_libraries(dum_e_control_loop
-  ${catkin_LIBRARIES}
-)
+add_library(dum_e_control_loop src/dum_e_control_loop.cpp)
+target_link_libraries(dum_e_control_loop ${catkin_LIBRARIES})
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -176,7 +168,7 @@ target_link_libraries(dum_e_control_loop
 
 
 add_executable(dum_e_control_node src/dum_e_control_node.cpp)
-set_target_properties(dum_e_control_node PROPERTIES OUTPUT_NAME node PREFIX "")
+#set_target_properties(dum_e_control_node PROPERTIES OUTPUT_NAME node PREFIX "")
 target_link_libraries(dum_e_control_node
 	dum_e_hardware_interface
 	dum_e_control_loop

@@ -1,4 +1,5 @@
-#include <dum_e/dum_e_hardware_interface.cpp>
+#include <dum_e_control/dum_e_control_loop.h>
+#include <dum_e_control/dum_e_hardware_interface.h>
 
 int main(int argc, char** argv)
 {
@@ -10,6 +11,9 @@ int main(int argc, char** argv)
 
 	boost::shared_ptr<dum_e::GenericHWInterface> gen_hw_interface(new dum_e::GenericHWInterface(nh));
 	gen_hw_interface->init();
+
+	dum_e::GenericHWControlLoop control_loop(nh, gen_hw_interface);
+	control_loop.run(); 	
 
 	return 0;
 }

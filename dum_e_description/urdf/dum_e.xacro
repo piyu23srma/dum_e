@@ -49,12 +49,12 @@
 	<xacro:inertial_matrix mass="1"/>
   </link>
 
-  <joint name="pan_joint" type="revolute">
+  <joint name="joint1" type="revolute">
     <parent link="base_link"/>
     <child link="pan_link"/>
     <origin xyz="0 0 0.1"/>
     <axis xyz="0 0 1" />
-    <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    <limit effort="300" velocity="6" lower="-3.14" upper="3.14"/>
     <dynamics damping="50" friction="1"/>
   </joint>
 
@@ -77,12 +77,12 @@
 	<xacro:inertial_matrix mass="1"/>
   </link>
 
-  <joint name="tilt_joint" type="revolute">
+  <joint name="joint2" type="revolute">
     <parent link="pan_link"/>
     <child link="tilt_link"/>
     <origin xyz="0 0 0.2"/>
     <axis xyz="0 1 0" />
-    <limit effort="300" velocity="0.1" lower="-4.64" upper="-1.5"/>
+    <limit effort="300" velocity="6" lower="-1.57" upper="1.57"/>
     <dynamics damping="50" friction="1"/>
   </joint>
 

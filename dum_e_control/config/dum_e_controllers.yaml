@@ -1,4 +1,4 @@
-generic_hw_control_loop:
+dum_e_control_loop:
   loop_hz: 300
   cycle_time_error_threshold: 0.01
 
@@ -13,7 +13,7 @@ hardware_interface:
 joint_state_controller:
   type:
     joint_state_controller/JointStateController
-    publish_rate: 50
+  publish_rate: 50
 
 position_trajectory_controller:
   type: position_controllers/JointTrajectoryController

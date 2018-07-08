@@ -1,11 +1,11 @@
-#include <dum_e/dum_e_control_loop.h>
+#include <dum_e_control/dum_e_control_loop.h>
 #include <rosparam_shortcuts/rosparam_shortcuts.h>
 
 namespace dum_e
 {
-	GenericHWControlLoop::GenericHWControlLoop(ros::NodeHandle& nh, boost:shared_ptr<dum_e::GenericHWInterface> hardware_interface)
-	: nh_(nh),
-	hardware_interface_(hardware_interface)
+	GenericHWControlLoop::GenericHWControlLoop(ros::NodeHandle& nh, boost::shared_ptr<dum_e::GenericHWInterface> hardware_interface)
+	: nh_(nh)
+	, hardware_interface_(hardware_interface)
 	{
 		controller_manager_.reset(new controller_manager::ControllerManager(hardware_interface_.get(),nh_));
 
